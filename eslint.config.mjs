@@ -6,6 +6,7 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
+  prettierConfig,
   {
     rules: {
       "no-unused-expressions": "error",
@@ -14,7 +15,6 @@ const eslintConfig = defineConfig([
       "no-trailing-spaces": "error",
     },
   },
-  prettierConfig,
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:
