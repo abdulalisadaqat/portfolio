@@ -1,10 +1,20 @@
 import { defineConfig, globalIgnores } from "eslint/config";
+import prettierConfig from "eslint-config-prettier";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
 
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
+  {
+    rules: {
+      "no-unused-expressions": "error",
+      "@typescript-eslint/no-unused-vars": "error",
+      "no-multiple-empty-lines": ["error", { max: 1 }],
+      "no-trailing-spaces": "error",
+    },
+  },
+  prettierConfig,
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:
